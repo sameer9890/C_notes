@@ -1,0 +1,84 @@
+// Online C compiler to run C program online
+// Online C compiler to run C program online
+#include <stdio.h>
+#include <string.h>
+
+ void ustrrev(char*,char*);
+int ustrlen(char*);
+void ustrcpy(char*,char*);
+
+int main() 
+{
+    
+    int len,x;
+
+    char a[20];
+   // char c[]={"hello hi"};
+    char b[20];
+    char c[20];
+    
+    printf("enter a string ");
+    gets(a);
+    len=ustrlen(a);
+    printf("length is = %d \n",len);
+    ustrcpy(b,a);
+    printf("copied string in b is - %s\n",b);
+   //  ustrrev(a,c);
+    int y=0;
+    int s=strlen(a)-1;
+    {
+        while(s>=0)
+    {
+        c[y]=a[s];
+        s--;
+        y++;
+        
+    }
+    c[y]='\0';
+    printf("reverse string is %s",c);
+    }
+    return 0;
+}
+
+
+
+void ustrcpy(char*b,char*a)
+{
+    while(*a!='\0')
+    {
+    *b=*a;
+    a++;
+    b++;
+    
+    }
+    *b='\0';
+    
+}
+
+int ustrlen(char* b){
+    int len =0;
+      while(*b!='\0')
+      {
+          len++;
+          b++;
+          
+      }
+      return len;
+}
+
+/*
+void ustrrev(char*a,char*c)
+{
+    int y=0;
+    int x=ustrlen(a)-1;
+    while(x>=0)
+    {
+        c[y]=a[x];
+        x--;
+        y++;
+        
+    }
+    c[y]='\0';
+    printf("reverse string is %s",c);
+}
+*/
